@@ -1,0 +1,69 @@
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - buyer_profile_location
+  - buyer_initiate_guidelines
+  - thanks
+
+actions:
+  - action_getBuyerprofileNavigation
+  - action_getBuyerGuidelines
+
+slots:
+  location:
+    type: text
+
+responses:
+  utter_greet:
+    - text: "Hey! How are you?"
+
+  utter_cheer_up:
+    - text: "Here is something to cheer you up:"
+      image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+    - text: "Did that help you?"
+
+  utter_buyer_myprofile_kycnotcomplete_response:
+    - text: "Well, Your profile will be visible under MY PROFILE tab after the successful KYC completion."
+
+  utter_buyer_myprofile_kycPending_response:
+    - text: "Well, Please confirm your KYC details post which, your profile will be visible under MY PROFILE tab after the successful KYC completion."
+
+  utter_buyer_guidelines_kycnotcomplete_response:
+    - text: "Sure, I can help you in completing your KYC. \n 1. Please click on the 'BEGIN IDENTITY VERIFICATION' button on your 'INITIATE VERIFICATION' tab \n 2. Ensure you have the latest version of your browser with device camera access. \n 3. Please use of the accepted identity document only. \n 4. Check for the Acceptable Criteria. \n 5. Proceed with scanning the documents. Once scanning is successful, you will be asked for confirmation. Post confirmation enjoy your Connected CAR service."  
+
+  utter_buyer_guidelines_kycPending_response:
+    - text: "Looks like you have Inititated KYC and the status seems to be Success, Please confirm your KYC details for successful KYC completion."
+
+  utter_buyer_myprofile_kyccomplete_response:
+    - text: "Congratulations, You have completed your KYC successfully. Please check your details anytime under MY PROFILE tab located in the HomePage."
+
+  utter_happy:
+    - text: "Great, carry on!"
+
+  utter_thanks_reposnse:
+    - text: "Great, thanks for getting help from a BOT."
+
+  utter_goodbye:
+    - text: "Bye"
+
+  utter_iamabot:
+    - text: "I am a bot, powered by Rasa."
+
+  utter_how_can_i_help:
+    - text: "Hello. I am a medicare locator. I can help you find nearset hospital. How can I help?"
+    - text: "Hi. My name is medicare locator. How can I help you today?"
+
+  utter_ask_location:
+    - text: "Can you provide your location please?"
+    - text: "To find the nearest {facility_type} I need your address."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
